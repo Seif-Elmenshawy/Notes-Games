@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="d5kn50oc.png">
+    <link rel="icon" href="l321tkqh.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Notes</title>
 </head>
 <body>
     <main>
@@ -19,29 +19,22 @@
                 <span class="games">& Games</span>
             </h1>
             <ul>
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a class="nav-item" href="note.html">Notes</a></li>
+                <li><a class="nav-item" href="index.html">Home</a></li>
+                <li><a class="active" href="note.html">Notes</a></li>
                 <li><a class="nav-item" href="games.html">Games</a></li>
             </ul>
             <button onclick="changetheme()" class="theme-changer">Change theme</button>
         </nav>
         <div class="section1">
             <h2 class="section1-header">Welcome!</h2>
-            <p class="section1-text">Here you can take notes, and write diaries. In the same time, you can have fun.</p>
+            <p class="section1-text">Here you can take notes.<br>Be comfortable to write what you want and you can download it.</p>
         </div>
-        <div class="section2">
-            <div class="section2-part">
-                <h2 class="notes">Notes</h2>
-                <img class="section2-img" src="l321tkqh.png">
-                <p class="section2-text">Here you can take notes or write diaries and download them in pdf</p>
-                <a class="section2-btn" href="note.html"><button class="section2-button">Take notes</button></a>
-            </div>
-            <div class="section2-part">
-                <h2 class="games">Games</h2>
-                <img class="section2-img" src="h62f01dx.png">
-                <p class="section2-text">Here you can play some games and have fun</p>
-                <a class="section2-btn" href="games.html"><button class="section2-button">Have fun</button></a>
-            </div>
+        <div class="notes-area">
+            <h3>You can write below</h3>
+            <form>
+                <textarea class="note-taker" id="input" placeholder="write here"></textarea>
+            </form>
+            <button onclick="download()" class="download">Download</button>
         </div>
         <footer>
             <div class="footericons">
@@ -55,6 +48,17 @@
         function changetheme(){
             const body = document.body;
             body.classList.toggle("light-theme");
+        }
+        function download(){
+            const value = document.getElementById("input").value;
+            const file = new Blob([value], { type: "text/plain" });
+            const downloadLink = URL.createObjectURL(file);
+
+            const a = document.createElement("a");
+            a.href = downloadLink;
+            a.download = "note.txt";
+            a.click();
+            URL.revokeObjectURL(url);
         }
     </script>
 </body>

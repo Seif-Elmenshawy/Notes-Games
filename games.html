@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="h62f01dx.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Games</title>
+</head>
+<body>
+    <main>
+        <nav>
+            <h1>
+                <span class="notes">Notes</span><br>
+                <span class="games">& Games</span>
+            </h1>
+            <ul>
+                <li><a class="nav-item" href="index.html">Home</a></li>
+                <li><a class="active" href="note.html">Notes</a></li>
+                <li><a class="nav-item" href="games.html">Games</a></li>
+            </ul>
+            <button onclick="changetheme()" class="theme-changer">Change theme</button>
+        </nav>
+        <div class="section1">
+            <h2 class="section1-header">Welcome!</h2>
+            <p class="section1-text">Here you can have fun and play some games. The only available game here is rock, paper scissor. you can play it below</p>
+        </div>
+        <div class="stage">
+            <h1>Choose a gesture</h1>
+        <div class="gesture-container">
+            <div>
+                <img class="gesture" src="paper.png">
+                <h3>Paper</h3>
+                <button id="paper" onclick="play(this.id)">Paper</button>
+            </div>
+            <div>
+                <img class="gesture" src="rock.png">
+                <h3>Rock</h3>
+                <button id="rock" onclick="play(this.id)">rock</button>
+            </div>
+            <div>
+                <img class="gesture" src="scissor.png">
+                <h3>Scissors</h3>
+                <button  id="scissor" onclick="play(this.id)">scissor</button>
+            </div>
+        </div>
+            <h1 id="result">No winner</h1>
+        </div>
+        <footer>
+            <div class="footericons">
+                <a href=https://github.com/Seif-Elmenshawy><img class="icon"src="https://seif-elmenshawy.github.io/Union-Website/github-mark-white.png"></a>
+                <a href="https://hackclub.slack.com/team/U091ME8PMQS"><img class="icon"src="https://seif-elmenshawy.github.io/Union-Website/slack.png"></a>
+                <a href="mailto:seif.ahmed.3849@gmail.com""><img class="icon" src="https://seif-elmenshawy.github.io/Union-Website/mail.png"></a>
+            </div>
+        </footer>
+    </main>
+    <script>
+        function changetheme(){
+            const body = document.body;
+            body.classList.toggle("light-theme");
+        }
+        function compchoice(){
+            let choice=Math.random();
+            if (choice<1/3){
+                return "paper";
+            }
+            else if (choice< 2/3){
+                return "rock";
+            }
+            else{
+                return "scissor";
+            }
+        }
+
+function play(userchoice){
+    let computerchoice = compchoice(); // ✅ get actual result of function
+
+    console.log("User:", userchoice, "Computer:", computerchoice); // Debug
+
+    if (userchoice === computerchoice){
+        document.getElementById("result").textContent = "Tie";
+    }
+    else if (userchoice=="paper" && computerchoice=="scissor"){
+        document.getElementById("result").textContent = "Computer Wins";
+    }
+    else if (userchoice=="scissor"&&computerchoice=="rock"){
+        document.getElementById("result").textContent = "Computer Wins";
+    }
+    else if (userchoice=="rock"&&computerchoice=="paper"){
+        document.getElementById("result").textContent = "Computer Wins";
+    }
+    else if(userchoice=="paper"&&computerchoice=="rock"){
+        document.getElementById("result").textContent = "You Win";
+    }
+    else if(userchoice=="scissor"&&computerchoice=="paper"){
+        document.getElementById("result").textContent = "You Win";
+    }
+    else if(userchoice=="rock"&&computerchoice=="scissor"){
+        document.getElementById("result").textContent = "You Win";
+    }
+
+}
+
+    </script>
+</body>
+</html>

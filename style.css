@@ -2,9 +2,6 @@ main{
     max-width: 1200px;
     overflow-x: hidden;
 }
-body{
-    overflow-x: hidden;
-}
 *{
     margin:auto;
     box-sizing: border-box;
@@ -23,9 +20,11 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    border-radius: 0 0 10px 10px;
 }
 body{
-    background-color: 	#121826;
+    background-color:#121826;
+    overflow-x: hidden;
 }
 a{
     padding: 10px;
@@ -75,7 +74,7 @@ ul{
     font-size: large;
 }
 .section2{
-    background-color:#121826;
+    background-color:transparent;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -119,6 +118,7 @@ footer{
     height:100px;
     margin-top:80px ;
     overflow: hidden;
+    border-radius:10px 10px 0 0;
 }
 .icon{
     width: 50px;
@@ -132,4 +132,71 @@ footer{
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+.theme-changer{
+    background-color: lightgrey;
+    color: #1A1F2E;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+}
+.light-theme{
+    background-color:lightgrey;
+}
+.notes-area{
+    background-color: #1A1F2E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+    color: lightgray;
+    font-family: poppins;
+    margin-top: 70px;
+}
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.note-taker{
+    width:70%;
+    height: 300px;
+    background-color: lightgray;
+    border: none;
+    resize: none;
+    text-overflow: clip;
+    font-family: pacifico;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.download{
+    background-color: lightgray;
+    border: none;
+    border-radius: 7px;
+    padding:10px
+}
+.stage{
+    margin-top: 30px;
+    width: 100%;
+    color: lightgray;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Press Start 2P";
+    text-align: center;
+}
+.gesture-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.gesture{
+    width:50%;
+    height:300px;
+    margin-bottom: 30px;
 }

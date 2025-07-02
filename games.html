@@ -20,8 +20,8 @@
             </h1>
             <ul>
                 <li><a class="nav-item" href="index.html">Home</a></li>
-                <li><a class="active" href="note.html">Notes</a></li>
-                <li><a class="nav-item" href="games.html">Games</a></li>
+                <li><a class="nav-item" href="note.html">Notes</a></li>
+                <li><a class="active" href="games.html">Games</a></li>
             </ul>
             <button onclick="changetheme()" class="theme-changer">Change theme</button>
         </nav>
@@ -29,20 +29,20 @@
             <h2 class="section1-header">Welcome!</h2>
             <p class="section1-text">Here you can have fun and play some games. The only available game here is rock, paper scissor. you can play it below</p>
         </div>
-        <div class="stage">
+        <div class="stage" id="stage">
             <h1>Choose a gesture</h1>
         <div class="gesture-container">
-            <div>
+            <div class="gesture-frame" id="gesture">
                 <img class="gesture" src="paper.png">
                 <h3>Paper</h3>
                 <button id="paper" onclick="play(this.id)">Paper</button>
             </div>
-            <div>
+            <div class="gesture-frame" id="gesture">
                 <img class="gesture" src="rock.png">
                 <h3>Rock</h3>
                 <button id="rock" onclick="play(this.id)">rock</button>
             </div>
-            <div>
+            <div class="gesture-frame" id="gesture">
                 <img class="gesture" src="scissor.png">
                 <h3>Scissors</h3>
                 <button  id="scissor" onclick="play(this.id)">scissor</button>
@@ -62,6 +62,7 @@
         function changetheme(){
             const body = document.body;
             body.classList.toggle("light-theme");
+            document.getElementById("stage").classList.toggle("stage-lighttheme");
         }
         function compchoice(){
             let choice=Math.random();

@@ -142,10 +142,12 @@ footer{
 }
 .light-theme{
     background-color:lightgrey;
+    color:#121826;
 }
 .notes-area{
     background-color: #1A1F2E;
     display: flex;
+    border-radius: 15px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -162,6 +164,7 @@ form{
 .note-taker{
     width:70%;
     height: 300px;
+    border-radius: 15px;
     background-color: lightgray;
     border: none;
     resize: none;
@@ -186,6 +189,9 @@ form{
     font-family: "Press Start 2P";
     text-align: center;
 }
+.stage-lighttheme{
+    color: #121826;
+}
 .gesture-container{
     display: flex;
     flex-direction: row;
@@ -199,4 +205,18 @@ form{
     width:50%;
     height:300px;
     margin-bottom: 30px;
+    border: 2px solid transparent;
+}
+.gesture-frame{
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    margin:0 10px;
+    width:30%;
+}
+.gesture-frame:hover{
+    border: 2px solid lightgray;
+}
+.gesture-frame-lighttheme:hover{
+    border: solid 2px #121826;
 }
